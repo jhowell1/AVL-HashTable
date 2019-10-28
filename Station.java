@@ -7,7 +7,7 @@
 package AVLHashTable;
 
 // I create what I call a Station because since the data structure of
-// A2233JHowAVLTree is a hybrid data structure between an AVL Tree,
+// AVLHashTable is a hybrid data structure between an AVL Tree,
 // a Hash Table, and the milestones object, I wanted to differentiate the Nodes
 // as stations, to help decrease the confusion one might get due to expectations of
 // what a Node might be.
@@ -17,7 +17,7 @@ public class Station<T extends Comparable<? super T>>
     public Station<T> left;
     public Station<T> right;
     public int hashPosition;
-    public int duplicates = 1;
+    public int frequency = 1;
     public int height = 0;
     public int balance;
     public boolean isActive;
