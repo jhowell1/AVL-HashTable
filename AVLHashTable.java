@@ -439,64 +439,6 @@ public class AVLHashTable<T extends Comparable<? super T>>
         }
     }
 
-    // I create what I call a Station because since the data structure of
-    // A2233JHowAVLTree is a hybrid data structure between an AVL Tree,
-    // a Hash Table, and the milestones object, I wanted to differentiate the Nodes
-    // as stations, to help decrease the confusion one might get due to expectations of
-    // what a Node might be.
-    public class Station<T extends Comparable<? super T>>
-    {
-        public T item;
-        public Station<T> left;
-        public Station<T> right;
-        public int hashPosition;
-        public int frequency = 1;
-        public int height = 0;
-        public int balance;
-        public boolean isActive;
-
-        public Station (T theItem)
-        {
-            item = theItem;
-            left = null;
-            right = null;
-            isActive = true;
-        }
-
-        public Station (T theItem, boolean i)
-        {
-            item = theItem;
-            left = null;
-            right = null;
-            isActive = i;
-        }
-
-        public String character ()
-        {
-            return "Data: " + item + "\t\tHeight: " + height
-                    + "\t\tBalance: " + balance
-                    + "\t\tHash Position: " + hashPosition
-                    + "\t\tFrequency: " + frequency;
-        }
-
-        public String toString ()
-        {
-            String leftChild;
-            String rightChild;
-            if (left != null)
-                leftChild = left.character();
-            else
-                leftChild = null;
-            if (right != null)
-                rightChild = right.character();
-            else
-                rightChild = null;
-
-            return "\n" + character() + "\n\t  Left:  "
-                    + leftChild + "\n\t  Right: " + rightChild;
-        }
-    }
-
     public class Milestones<T extends Comparable<? super T>>
     {
         public Station<T> mode;
